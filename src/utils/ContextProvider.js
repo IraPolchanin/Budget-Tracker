@@ -1,8 +1,10 @@
-import React, { useReducer, createContext } from 'react';
+import React, { useReducer, createContext, useEffect } from 'react';
 
 const initialState = {
-  transactions: []
+  //transactions: []
+  transactions: JSON.parse(localStorage.getItem('transactions')) || []
 }
+
 
 export const BudgetContext = createContext(initialState);
 
@@ -24,6 +26,10 @@ export const BudgetProvider = ({ children }) => {
         return state;
     }
   }, initialState);
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(state.transactions));
+  }, [state.transactions]);
 
   function deleteTransaction(id) {
     dispatch({ type: "DELETE_TRANSACTION", payload: id });

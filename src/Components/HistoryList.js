@@ -32,6 +32,7 @@ const HistoryContent = styled.ul`
 export const HistoryList = () => {
   const [historyVisible, setHistoryVisible] = useState(true);
   const { transactions } = useContext(BudgetContext);
+
   
   return (Object.keys(transactions).length >0 &&<>
       <HistoryTitle onClick={() => setHistoryVisible(!historyVisible)}>

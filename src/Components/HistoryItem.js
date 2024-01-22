@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { BudgetContext } from '../utils/ContextProvider'
 
+// #region STYLES
 const HistoryItemContent = styled.li`
   width: 80%;
   position: relative;
@@ -40,6 +41,7 @@ const HistoryItemContent = styled.li`
     padding: 0;
   }
 `
+// #endregion
 
 export const HistoryItem = ({ name, amount, id }) => {
   const { deleteTransaction } = useContext(BudgetContext)

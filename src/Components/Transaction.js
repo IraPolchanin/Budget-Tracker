@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
-import { BudgetContext } from '../utils/ContextProvider'
-
+import { BudgetContext } from '../utils/ContextProvider';
 
 // #region STYLES
 const TransactionContent = styled.div`

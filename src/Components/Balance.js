@@ -37,6 +37,7 @@ const Devider = styled.div`
 
 export const Balance = () => {
 const { transactions } = useContext(BudgetContext);
+// console.log(transactions.map(el=>el.amount))
 const incomeSum = transactions.filter(transaction => transaction.amount>0).reduce((a,b) => a+b.amount, 0)
 const expenseSum = transactions.filter(transaction => transaction.amount<0).reduce((a,b) => a+b.amount, 0)
 
