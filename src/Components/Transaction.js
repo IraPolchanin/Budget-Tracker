@@ -48,7 +48,7 @@ const TransactionForm = styled.form`
 export const Transaction = () => {
 
   const [name, setName] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
 
   const { addTransaction } = useContext(BudgetContext);
 
@@ -63,7 +63,7 @@ export const Transaction = () => {
     if (name.length > 0 && amount !== 0) {
       addTransaction(newTransaction);
       setName('');
-      setAmount(0);
+      setAmount('');
     }
   }
 
@@ -73,6 +73,7 @@ export const Transaction = () => {
       <TransactionForm onSubmit={handleSubmit}>
         <label className='formLabel' htmlFor="formName">Enter name of transaction:</label>
         <input
+          placeholder='salary, scholarship, food, fuel, etc'
           className='formInput'
           type="text"
           id='formName'
@@ -83,6 +84,7 @@ export const Transaction = () => {
 
         <label className='formLabel' htmlFor="formLabel">Enter amount:</label>
         <input
+        placeholder='0'
           className='formInput'
           type="number"
           id='formAmount'
