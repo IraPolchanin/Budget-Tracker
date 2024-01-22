@@ -13,6 +13,7 @@ const AppContent = styled.section`
 
   box-sizing: border-box;
   max-width: 400px;
+  width: 95%;
   margin: 0 auto;
   padding: 50px 0;
   color: var(--color-text);

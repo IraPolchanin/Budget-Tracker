@@ -57,7 +57,7 @@ export const Transaction = () => {
     const newTransaction = {
       id: nanoid(4),
       name,
-      amount: +amount.toFixed(2)
+      amount: +amount
     };
 
     if (name.length > 0 && amount !== 0) {
@@ -87,7 +87,8 @@ export const Transaction = () => {
           type="number"
           id='formAmount'
           value={amount}
-          onChange={(e) => setAmount(+e.target.value.trim())}
+          onChange={(e) => {
+          setAmount(e.target.value.trim())}}
           required
         />
         <button className='formBtn' type="submit">Add Transaction</button>

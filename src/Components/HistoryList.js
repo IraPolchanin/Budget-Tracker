@@ -19,8 +19,12 @@ const HistoryTitle = styled.h2`
     }
 `
 const HistoryContent = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: end;
   margin: 0 0 20px;
   padding: 0;
+  text-align: end;
 `
 
 // #endregion

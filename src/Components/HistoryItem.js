@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BudgetContext } from '../utils/ContextProvider'
 
 const HistoryItemContent = styled.li`
+  width: 80%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -53,8 +54,10 @@ export const HistoryItem = ({ name, amount, id }) => {
       >
         x
       </button>
+
       <p className="text">{name}</p>
-      <p className="text">{amountSign}$ {Math.abs(amount)}</p>
+      
+      <p className="text">{amountSign}$ {Math.abs(amount.toFixed(2))}</p>
     </HistoryItemContent>
   )
 }
